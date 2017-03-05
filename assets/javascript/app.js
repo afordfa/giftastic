@@ -44,9 +44,17 @@ $(document).ready(function() {
       // This function handles events where one button is clicked
       $(".add-show").on("click", function(event) {
         event.preventDefault();
+        
 
         // This line grabs the input from the textbox
         var newShow = $(".show-input").val().trim();
+
+        //if the value in the input box is blank or matches an
+        //item already in the array, it will not add the new item
+        //if it is a new item, it will add it to the array and refresh 
+        //the button displsy
+        if ((newShow != "") && (showArray.indexOf(newShow) === -1)) {
+        
 
         // The movie from the textbox is then added to our array
         showArray.push(newShow);
@@ -54,7 +62,7 @@ $(document).ready(function() {
 
         // Calling renderButtons which handles the processing of our movie array
         displayButtons();
-
+    	}
       });
 
 
@@ -78,7 +86,7 @@ $(document).ready(function() {
 		selectedShow = $(this).html();
 
 	//giphy api url/endpoint
-      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         selectedShow + "&api_key=dc6zaTOxFJmzC&limit=10";
 
     //call to giphy api
@@ -92,14 +100,14 @@ $(document).ready(function() {
         for (var i = 0; i < results.length; i++) {
             var showDiv = $("<div>");
             showDiv.attr("class", "gif-image-div");
-            var p = $("<p>");
-            p.attr("class", "rating");
-            p.text("Rating: " + results[i].rating);
+            var rating = $("<p>");
+            rating.attr("class", "rating");
+            rating.text("Rating: " + results[i].rating);
             showImage = $("<img>");
             showImage.attr("class", "single-image image" + i)
             showImage.attr("src", results[i].images.fixed_height_still.url);
             showImage.attr("data", i);
-            showDiv.append(p);
+            showDiv.append(rating);
             showDiv.append(showImage);
             $(".gif-box").append(showDiv);
 
