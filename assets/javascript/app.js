@@ -31,7 +31,7 @@ $(document).ready(function() {
 	function displayButtons() {
 		$(".button-area").empty();
 		for (var i = 0; i < showArray.length; i++) {
-			var buttonText =  $("<div>");
+			var buttonText =  $("<button>");
 			buttonText.text(showArray[i]);
 			buttonText.attr("class", "btn btn-info gif-button gif-button" + i);
 			buttonText.attr("value", i);
