@@ -64,6 +64,7 @@ $(document).ready(function() {
 	//calls giphy api to pull 10 gifs using the show the user selected
 
 	$(document).on("click", ".gif-button", function(){	
+		event.preventDefault();
 		$(".gif-box").empty();
 
 		selectedShow = "";
