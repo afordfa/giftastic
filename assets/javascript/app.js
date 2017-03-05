@@ -77,6 +77,10 @@ $(document).ready(function() {
 	$(document).on("click", ".gif-button", function(){	
 		event.preventDefault();
 		$(".gif-box").empty();
+		var gifHeader = $("<div>");
+		gifHeader.attr("class", "gif-header");
+		gifHeader.text("Click any image to make the magic happen");
+		$(".gif-box").append(gifHeader);
 
 		selectedShow = "";
 		showImage = "";
