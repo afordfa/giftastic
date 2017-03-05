@@ -1,0 +1,62 @@
+body {
+	text-align: center;
+	margin: 20px;
+	background-image: url("../images/tweed.png");
+	color: white;
+	font-family: 'Oregano', cursive;
+	font-family: 'Happy Monkey', cursive;
+
+
+}
+
+.title-section {
+	margin-bottom: 30px;
+}
+
+.button-instructions, .add-instructions {
+	font-size: 36px;
+}
+col-md-4, col-md-8, col-md-12 {
+	border-style: solid;
+	background-color: lavender;
+	border-color: black;
+
+}
+
+p {
+
+	/*margin: 20px;*/
+}
+
+h1 {
+	font-size: 90px;
+}
+
+h1, h2 {
+	font-family: 'Bungee Shade', cursive;
+	text-align: center;
+}
+
+.rating {
+	font-size: 24px;
+}
+
+.gif-box {
+	margin: 50px;
+	padding: 80px;
+}
+
+
+.btn {
+	margin: 5px;
+}
+
+
+.rating {
+	position: relative;
+}
+.gif-image-div {
+	float: left; 
+	margin: 10px;
+	z-index: 2;
+}
