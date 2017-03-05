@@ -53,9 +53,12 @@ $(document).ready(function() {
         //item already in the array, it will not add the new item
         //if it is a new item, it will add it to the array and refresh 
         //the button displsy
-        if ((newShow != "") && (showArray.indexOf(newShow) === -1)) {
-        
-
+        if (newShow === "") {
+        	$(".show-input").placeholder = "Enter your new show here!";
+        } else if (showArray.indexOf(newShow) != -1) {
+        	$(".show-input").placeholder = "Pick a new show";
+        	$(".show-input").val("")
+        } else {
         // The movie from the textbox is then added to our array
         showArray.push(newShow);
         $(".show-input").val("");
