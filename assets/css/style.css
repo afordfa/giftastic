@@ -60,3 +60,10 @@ h1, h2 {
 	margin: 10px;
 	z-index: 2;
 }
+
+a {
+	color:white
+}
+a:hover {
+	color: lavender;
+}
